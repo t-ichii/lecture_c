@@ -27,3 +27,13 @@ TBD
 - `Dockerfile`: Cの実行環境を記述しているDockerfile
 - `src/`: Cコードを配置するところ（DockerContainer内に同期されます）
 
+## 教材
+
+- [コンピュータの原理から学ぶプログラミング言語C](https://www.amazon.co.jp/dp/4320124774)
+
+## 演習問題の回答方法
+
+- 第2章以降、各章末にある演習問題を自らのBranchにCommitしていく
+  - Cのソースであれば、　`src/` 以下に `practice_<章番号>/question.<章番号>.<問題番号>.c` という形でソースを作っていく。（例 `src/practice_4/question.4.1.c`）
+  - 文章による記述問題であれば `practice_<章番号>/question.<章番号>.<問題番号>.txt` で回答をしていく。
+
