@@ -12,7 +12,7 @@
 - GitHubに公開鍵を登録
 - レポジトリのclone
 - git branch の切り替え
-  - mainブランチは作業では利用しないでください。 `git checkout -b <開発を行う人を識別できる文字列> origin/<開発を行う人を識別できる文字列>` を実行し、ブランチを切り替えてください。
+  - mainブランチは作業では利用しないでください。 `git checkout -b <開発を行う人を識別できる文字列>/base origin/<開発を行う人を識別できる文字列>/base` (例: `git checkout -b t-ichii/base origin/t-ichii/base`)を実行し、ブランチを切り替えてください。
 - Docker Desctopのインストール
   - [Docker Desktop](https://docs.docker.jp/desktop/toc.html)のページからご自身の環境にあったDockerDesctopをインストールしてください。
 - image build
@@ -30,6 +30,18 @@ TBD
 ## 教材
 
 - [コンピュータの原理から学ぶプログラミング言語C](https://www.amazon.co.jp/dp/4320124774)
+
+## 進め方
+
+- 演習に参加する人のベースブランチはセットアップにある `<開発を行う人を識別できる文字列>/base` とする。
+- 演習に参加する前に `git checkout <開発を行う人を識別できる文字列>/base && git checkout <開発を行う人を識別できる文字列>/practice_<章番号>` を実行し、回答の準備をする。
+- 下記の「演習問題の回答方法」に従って回答ファイルを作成していく。
+- 回答ファイルを作成したら、 `git add src/practice_<章番号>/*.c　src/practice_<章番号>/*.txt && git commit -m 'commit question'` を行う
+  - gitのコミットに関しては、慣れていくうちにレクチャーするので、一旦最初の方法として上記を行う。
+- `git push` を行い、GitHub上に回答をアップロードする。
+- 回答をアップロードしたら、GitHub上にそのブランチをマージするためのPullRequestを作成する
+  - baseを ` <開発を行う人を識別できる文字列>/base`, compareを `<開発を行う人を識別できる文字列>/practice_<章番号>` としてPullRequestを作成する。
+- PullRequestを作成したら、t-ichiiに連絡してコードレビューを行う。問題なければ、PullReqeustをApproveしてマージをし、その演習問題を完了とする。
 
 ## 演習問題の回答方法
 
