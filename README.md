@@ -2,6 +2,7 @@
 
 ## セットアップ
 
+### レポジトリcloneまで
 - GitHubアカウントの取得
   - [GitHub](https://github.com/)にアクセスし、SignUpをおこなって、アカウントを作成してください。
 - Homebrewのインストール
@@ -10,7 +11,12 @@
   - ターミナル上で `git --version` を実行してバージョンが表示されていればgitはインストールされているのでスキップしてください
   - `brew install git` を実行してください。
 - GitHubに公開鍵を登録
+  - [GitHubのガイド](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)に従ってSSHのKeyを登録し、使えるようにしてください。
 - レポジトリのclone
+  - 任意の場所(ホームディレクトリなど)で `git clone git@github.com:t-ichii/lecture_c.git` を実行し、git repositoryをcloneしてください。
+
+### レポジトリのclone後
+
 - git branch の切り替え
   - mainブランチは作業では利用しないでください。 `git checkout -b <開発を行う人を識別できる文字列>/base origin/<開発を行う人を識別できる文字列>/base` (例: `git checkout -b t-ichii/base origin/t-ichii/base`)を実行し、ブランチを切り替えてください。
 - Docker Desctopのインストール
@@ -20,7 +26,13 @@
 
 ## 開発の方法
 
-TBD
+（`make image_build` を行ってDockerImageをBuildしておいてください。）
+
+- 下記の「演習問題の回答方法」に従って実行ファイルを作っておきます。
+- make run_image をおこなって、DockerImageを実行し、実行環境の中に入ります
+- DockerImageのbash上で `cd src/practice_<章番号>/` をおこなって、先程作ったファイルが有ることを確認します。
+- `gcc question.<章番号>.<問題番号>.c -o question.<章番号>.<問題番号>` を実行し、コンパイルします。
+- コンパイルが成功したら、 `./question.<章番号>.<問題番号>` を実行し、作成したプログラムが期待したどおりに動くか確認します。
 
 ## ディレクトリ構成
 
